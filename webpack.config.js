@@ -17,6 +17,10 @@ const templateFiles = fs.readdirSync(environment.paths.source)
   .filter((file) => path.extname(file).toLowerCase() === '.html');
 
 const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
+  templateParameters: {
+    'link_css': '<link rel="stylesheet" href="css/'+template.split('.')[0]+'.css">',
+    'link_js': '<script defer src="js/'+template.split('.')[0]+'.js"></script>'
+  },
   inject: false,
   hash: false,
   filename: template,

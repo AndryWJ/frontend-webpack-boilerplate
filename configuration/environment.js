@@ -9,7 +9,7 @@ var paths = {
 
 module.exports = {
   entry: {
-    app: path.resolve(paths.source, 'templates/index', 'index.js'),
+    index: path.resolve(paths.source, 'templates/index', 'index.js'),
     aboutus: path.resolve(paths.source, 'templates/aboutus', 'aboutus.js'),
   },
   paths: paths,
