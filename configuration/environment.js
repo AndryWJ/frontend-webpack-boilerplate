@@ -1,13 +1,18 @@
 const path = require('path');
 
-module.exports = {
-  paths: {
-    /* Path to source files directory */
-    source: path.resolve(__dirname, '../src/'),
+var paths = {
+  /* Path to source files directory */
+  source: path.resolve(__dirname, '../src/'),
+  /* Path to built files directory */
+  output: path.resolve(__dirname, '../dist/'),
+}
 
-    /* Path to built files directory */
-    output: path.resolve(__dirname, '../dist/'),
+module.exports = {
+  entry: {
+    app: path.resolve(paths.source, 'templates/index', 'index.js'),
+    aboutus: path.resolve(paths.source, 'templates/aboutus', 'aboutus.js'),
   },
+  paths: paths,
   server: {
     host: 'localhost',
     port: 8000,
